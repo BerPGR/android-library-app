@@ -14,5 +14,5 @@ class BooksViewModel(val repository: Repository): ViewModel() {
         }
     }
 
-    val books = repository.getALlBooks()
+    val books = repository.getAllBooks()
 }
