@@ -6,7 +6,7 @@ import br.com.libraryapp.repository.Repository
 import br.com.libraryapp.room.BookEntity
 import kotlinx.coroutines.launch
 
-class BooksViewModel(val repository: Repository): ViewModel() {
+class BooksViewModel(private val repository: Repository): ViewModel() {
 
     fun addBook(book: BookEntity) {
         viewModelScope.launch {
@@ -19,6 +19,12 @@ class BooksViewModel(val repository: Repository): ViewModel() {
     fun deleteBook(book: BookEntity) {
         viewModelScope.launch {
             repository.deleteBooksFromRoom(book)
+        }
+    }
+
+    fun updateBook(book: BookEntity) {
+        viewModelScope.launch {
+            repository.updateBookFromRoom(book)
         }
     }
 }

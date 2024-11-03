@@ -53,6 +53,8 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.androidx.navigation.compose)
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation(libs.androidx.room.ktx)
     // To use Kotlin Symbol Processing (KSP)
